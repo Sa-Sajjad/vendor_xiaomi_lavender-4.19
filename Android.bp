@@ -16742,7 +16742,7 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm: {
 			srcs: ["proprietary/vendor/lib/soundfx/libdirac.so"],
-			shared_libs: ["libDiracAPI_SHARED", "libcutils", "libutils", "libc++", "libdl", "libc", "libm", ],
+			shared_libs: ["liblog", "libDiracAPI_SHARED", "libcutils", "libutils", "libc++", "libdl", "libc", "libm", ],
 		},
 	},
 	compile_multilib: "32",
@@ -18704,7 +18704,7 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libvendor.goodix.hardware.interfaces.biometrics.fingerprint@2.1.so"],
-			shared_libs: ["liblog", "libc++", "libcutils", "libhidlbase-v32", "libhwbinder", "libutils", "libhidltransport", "libc", "libm", "libdl", ],
+			shared_libs: ["liblog", "libc++", "libcutils", "libhidlbase-v32", "libhwbinder", "libutils", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "64",
