@@ -231,7 +231,6 @@ PRODUCT_PACKAGES += \
     libmdsprpc \
     libminkdescriptor \
     libmmosal_vendor \
-    liboemcrypto \
     libqcci_legacy \
     libqdi \
     libqdp \
@@ -1222,6 +1221,7 @@ PRODUCT_PACKAGES += \
     libgf_hal \
     libgnsspps \
     libgoodixhwfingerprint \
+    libhdcpsrm \
     libizat_client_api \
     libizat_core \
     liblbs_core \
@@ -1241,6 +1241,7 @@ PRODUCT_PACKAGES += \
     libnetmgr_rmnet_ext \
     libnlnetmgr \
     liboemaids_vendor \
+    liboemcrypto \
     libpdmapper \
     libpdnotifier \
     libperipheral_client \
