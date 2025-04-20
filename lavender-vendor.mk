@@ -230,6 +230,7 @@ PRODUCT_PACKAGES += \
     libmdmdetect \
     libmdsprpc \
     libminkdescriptor \
+    libminksocket \
     libmmosal_vendor \
     libnative-api \
     libqcci_legacy \
