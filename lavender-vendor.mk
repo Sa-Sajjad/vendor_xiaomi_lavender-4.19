@@ -266,7 +266,7 @@ PRODUCT_PACKAGES += \
     vendor.display.postproc@1.0 \
     vendor.qti.hardware.dsp@1.0 \
     vendor.qti.hardware.fingerprint@1.0 \
-    vendor.qti.hardware.mwqemadapter@1.0_vendor \
+    vendor.qti.hardware.mwqemadapter@1.0 \
     sound_trigger.primary.sdm660 \
     libDiracAPI_SHARED \
     libMegviiFacepp-0.5.2 \
