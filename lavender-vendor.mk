@@ -233,6 +233,7 @@ PRODUCT_PACKAGES += \
     libminksocket \
     libmmosal_vendor \
     libnative-api \
+    libqcbor \
     libqcci_legacy \
     libqdi \
     libqdp \

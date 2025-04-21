@@ -817,11 +817,11 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm: {
 			srcs: ["proprietary/vendor/lib/libminkdescriptor.so"],
-			shared_libs: ["liblog", "libutils", "libnative-api", "libc++", "libc", "libm", "libdl", ],
+			shared_libs: ["liblog", "libutils", "libqcbor", "libnative-api", "libc++", "libc", "libm", "libdl", ],
 		},
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libminkdescriptor.so"],
-			shared_libs: ["liblog", "libutils", "libnative-api", "libc++", "libc", "libm", "libdl", ],
+			shared_libs: ["liblog", "libutils", "libqcbor", "libnative-api", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "both",
@@ -886,6 +886,27 @@ cc_prebuilt_library_shared {
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libnative-api.so"],
 			shared_libs: ["libminksocket", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libqcbor",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libqcbor.so"],
+			shared_libs: ["liblog", "libutils", "libcutils", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/vendor/lib64/libqcbor.so"],
+			shared_libs: ["liblog", "libutils", "libcutils", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "both",
@@ -17947,7 +17968,7 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libloc_qwes_iface.so"],
-			shared_libs: ["libutils", "libcutils", "liblog", "libgps.utils", "libminksocket", "libc++", "libc", "libm", "libdl", ],
+			shared_libs: ["libutils", "libcutils", "liblog", "libgps.utils", "libqcbor", "libminksocket", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "64",
@@ -18185,7 +18206,7 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/liboemcrypto.so"],
-			shared_libs: ["libutils", "libcutils", "liblog", "libQSEEComAPI", "libhdcpsrm", "libhidlbase", "vendor.display.config@1.0", "libc++", "libc", "libm", "libdl", ],
+			shared_libs: ["libutils", "libcutils", "liblog", "libQSEEComAPI", "libhdcpsrm", "libcpion", "libhidlbase", "vendor.display.config@1.0", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "64",
