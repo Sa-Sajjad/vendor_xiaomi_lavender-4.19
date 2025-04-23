@@ -212,7 +212,6 @@ PRODUCT_PACKAGES += \
     libc2d30_bltlib \
     libcdsp_default_listener \
     libcdsprpc \
-    libcpion \
     libdiag \
     libdsutils \
     libfastcvadsp_stub \
@@ -229,10 +228,8 @@ PRODUCT_PACKAGES += \
     libmdmdetect \
     libmdsprpc \
     libminkdescriptor \
-    libminksocket \
     libmmosal_vendor \
-    libnative-api \
-    libqcbor \
+    liboemcrypto \
     libqcci_legacy \
     libqdi \
     libqdp \
@@ -1220,7 +1217,6 @@ PRODUCT_PACKAGES += \
     libgf_hal \
     libgnsspps \
     libgoodixhwfingerprint \
-    libhdcpsrm \
     libizat_client_api \
     libizat_core \
     liblbs_core \
@@ -1240,7 +1236,6 @@ PRODUCT_PACKAGES += \
     libnetmgr_rmnet_ext \
     libnlnetmgr \
     liboemaids_vendor \
-    liboemcrypto \
     libpdmapper \
     libpdnotifier \
     libperipheral_client \

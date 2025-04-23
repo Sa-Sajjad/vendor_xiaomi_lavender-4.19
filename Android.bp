@@ -462,27 +462,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-	name: "libcpion",
-	owner: "xiaomi",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm: {
-			srcs: ["proprietary/vendor/lib/libcpion.so"],
-			shared_libs: ["liblog", "libion", "libc++", "libc", "libm", "libdl", ],
-		},
-		android_arm64: {
-			srcs: ["proprietary/vendor/lib64/libcpion.so"],
-			shared_libs: ["liblog", "libion", "libc++", "libc", "libm", "libdl", ],
-		},
-	},
-	compile_multilib: "both",
-	prefer: true,
-	soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
 	name: "libdiag",
 	owner: "xiaomi",
 	strip: {
@@ -806,35 +785,13 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm: {
 			srcs: ["proprietary/vendor/lib/libminkdescriptor.so"],
-			shared_libs: ["liblog", "libutils", "libqcbor", "libnative-api", "libc++", "libc", "libm", "libdl", ],
 		},
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libminkdescriptor.so"],
-			shared_libs: ["liblog", "libutils", "libqcbor", "libnative-api", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "both",
-	prefer: true,
-	soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-	name: "libminksocket",
-	owner: "xiaomi",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm: {
-			srcs: ["proprietary/vendor/lib/libminksocket.so"],
-			shared_libs: ["libcutils", "liblog", "libqrtr", "libc++", "libc", "libm", "libdl", ],
-		},
-		android_arm64: {
-			srcs: ["proprietary/vendor/lib64/libminksocket.so"],
-			shared_libs: ["libcutils", "liblog", "libqrtr", "libc++", "libc", "libm", "libdl", ],
-		},
-	},
-	compile_multilib: "both",
+	check_elf_files: false,
 	prefer: true,
 	soc_specific: true,
 }
@@ -862,43 +819,21 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-	name: "libnative-api",
+	name: "liboemcrypto",
 	owner: "xiaomi",
 	strip: {
 		none: true,
 	},
 	target: {
 		android_arm: {
-			srcs: ["proprietary/vendor/lib/libnative-api.so"],
-			shared_libs: ["libminksocket", "liblog", "libc++", "libc", "libm", "libdl", ],
+			srcs: ["proprietary/vendor/lib/liboemcrypto.so"],
 		},
 		android_arm64: {
-			srcs: ["proprietary/vendor/lib64/libnative-api.so"],
-			shared_libs: ["libminksocket", "liblog", "libc++", "libc", "libm", "libdl", ],
+			srcs: ["proprietary/vendor/lib64/liboemcrypto.so"],
 		},
 	},
 	compile_multilib: "both",
-	prefer: true,
-	soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-	name: "libqcbor",
-	owner: "xiaomi",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm: {
-			srcs: ["proprietary/vendor/lib/libqcbor.so"],
-			shared_libs: ["liblog", "libutils", "libcutils", "libc++", "libc", "libm", "libdl", ],
-		},
-		android_arm64: {
-			srcs: ["proprietary/vendor/lib64/libqcbor.so"],
-			shared_libs: ["liblog", "libutils", "libcutils", "libc++", "libc", "libm", "libdl", ],
-		},
-	},
-	compile_multilib: "both",
+	check_elf_files: false,
 	prefer: true,
 	soc_specific: true,
 }
@@ -17848,23 +17783,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-	name: "libhdcpsrm",
-	owner: "xiaomi",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm64: {
-			srcs: ["proprietary/vendor/lib64/libhdcpsrm.so"],
-			shared_libs: ["liblog", "libQSEEComAPI", "libc++", "libc", "libm", "libdl", ],
-		},
-	},
-	compile_multilib: "64",
-	prefer: true,
-	soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
 	name: "libizat_client_api",
 	owner: "xiaomi",
 	strip: {
@@ -17958,10 +17876,10 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libloc_qwes_iface.so"],
-			shared_libs: ["libutils", "libcutils", "liblog", "libgps.utils", "libqcbor", "libminksocket", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "64",
+	check_elf_files: false,
 	prefer: true,
 	soc_specific: true,
 }
@@ -18180,23 +18098,6 @@ cc_prebuilt_library_shared {
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/liboemaids_vendor.so"],
 			shared_libs: ["libc++", "libc", "libm", "libdl", ],
-		},
-	},
-	compile_multilib: "64",
-	prefer: true,
-	soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-	name: "liboemcrypto",
-	owner: "xiaomi",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm64: {
-			srcs: ["proprietary/vendor/lib64/liboemcrypto.so"],
-			shared_libs: ["libutils", "libcutils", "liblog", "libQSEEComAPI", "libhdcpsrm", "libcpion", "libhidlbase", "vendor.display.config@1.0", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "64",
