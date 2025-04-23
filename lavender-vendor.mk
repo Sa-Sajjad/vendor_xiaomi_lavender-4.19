@@ -242,7 +242,6 @@ PRODUCT_PACKAGES += \
     libqmi_encdec \
     libqmi_legacy \
     libqmiservices \
-    libqrtr \
     libqseed3 \
     libqtikeymaster4 \
     librs_adreno \
@@ -1246,6 +1245,7 @@ PRODUCT_PACKAGES += \
     libqcrildatactl \
     libqfp-service \
     libqisl \
+    libqrtr \
     libqsocket \
     librcc \
     libril-qc-hal-qmi \
