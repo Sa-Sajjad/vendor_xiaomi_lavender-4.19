@@ -17,38 +17,6 @@ soong_namespace {
 }
 
 cc_prebuilt_library_shared {
-	name: "libFileMux",
-	owner: "xiaomi",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm: {
-			srcs: ["proprietary//lib/libFileMux.so"],
-			shared_libs: ["libmmosal", "liblog", "libutils", "libcutils", "libmmparser_lite", "libc++", "libc", "libm", "libdl", ],
-		},
-	},
-	compile_multilib: "32",
-	prefer: true,
-}
-
-cc_prebuilt_library_shared {
-	name: "libOmxMux",
-	owner: "xiaomi",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm: {
-			srcs: ["proprietary//lib/libOmxMux.so"],
-			shared_libs: ["liblog", "libFileMux", "libbinder", "libmmosal", "libutils", "libc++", "libc", "libm", "libdl", ],
-		},
-	},
-	compile_multilib: "32",
-	prefer: true,
-}
-
-cc_prebuilt_library_shared {
 	name: "vendor.qti.diaghal-V1-ndk",
 	owner: "xiaomi",
 	strip: {
@@ -17585,6 +17553,7 @@ cc_prebuilt_library_shared {
 		},
 	},
 	compile_multilib: "64",
+	check_elf_files: false,
 	prefer: true,
 	soc_specific: true,
 }
