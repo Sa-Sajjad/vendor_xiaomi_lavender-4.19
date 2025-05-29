@@ -20600,14 +20600,13 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm: {
 			srcs: ["proprietary/system_ext/lib/liblistenjni.qti.so"],
-			shared_libs: ["libutils", "liblog", "liblistensoundmodel2.qti", "liblsmclient", "libc++", "libc", "libm", "libdl", ],
 		},
 		android_arm64: {
 			srcs: ["proprietary/system_ext/lib64/liblistenjni.qti.so"],
-			shared_libs: ["libutils", "liblog", "liblistensoundmodel2.qti", "liblsmclient", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "both",
+	check_elf_files: false,
 	prefer: true,
 	system_ext_specific: true,
 }
