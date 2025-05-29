@@ -199,6 +199,7 @@ PRODUCT_PACKAGES += \
     libq3dtools_adreno \
     libq3dtools_esx \
     android.hardware.gatekeeper@1.0-impl-qti \
+    android.hardware.keymaster@3.0-impl-qti \
     vendor.qti.hardware.qseecom@1.0-impl \
     vulkan.adreno \
     libC2D2 \
@@ -217,6 +218,10 @@ PRODUCT_PACKAGES += \
     libdsutils \
     libfastcvadsp_stub \
     libfastcvopt \
+    libgcs-calwrapper \
+    libgcs-ipc \
+    libgcs-osal \
+    libgcs \
     libgpudataproducer \
     libgsl \
     libhdr_tm \
@@ -231,6 +236,7 @@ PRODUCT_PACKAGES += \
     libminkdescriptor \
     libminksocket \
     libmmosal_vendor \
+    libmulawdec \
     libnative-api \
     libqcbor \
     libqcci_legacy \
@@ -280,7 +286,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.qseecom@1.0_vendor \
     vendor.qti.hardware.scve.objecttracker@1.0 \
     vendor.qti.hardware.scve.panorama@1.0 \
-    sound_trigger.primary.sdm660 \
     libDiracAPI_SHARED \
     libMegviiFacepp-0.5.2 \
     libOmxVideoDSMode \
@@ -1026,14 +1031,9 @@ PRODUCT_PACKAGES += \
     libdepthmapwrapper \
     libdsd2pcm \
     libflash_pmic \
-    libgcs-calwrapper \
-    libgcs-ipc \
-    libgcs-osal \
-    libgcs \
     libjpegdhw \
     libjpegdmahw \
     libjpegehw \
-    liblistensoundmodel2 \
     libmegface \
     libmibokeh_660 \
     libmmcamera2_c2d_module \
@@ -1381,6 +1381,8 @@ PRODUCT_PACKAGES += \
     libscveT2T_skel \
     libvpp_svc_skel \
     nuance \
+    liblistenjni.qti \
+    liblistensoundmodel2.qti \
     libmmosal \
     vendor.qti.hardware.qseecom@1.0 \
     vendor.qti.hardware.sensorscalibrate@1.0 \
@@ -1548,6 +1550,7 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-service-qti \
     android.hardware.drm@1.3-service.widevine \
     android.hardware.gatekeeper@1.0-service-qti \
+    android.hardware.keymaster@3.0-service-qti \
     android.hardware.keymaster@4.0-service-qti \
     qcrild \
     vendor.display.color@1.0-service \

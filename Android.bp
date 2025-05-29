@@ -193,11 +193,33 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm: {
 			srcs: ["proprietary/vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so"],
-			shared_libs: ["android.hardware.gatekeeper@1.0", "libhidlbase", "libhidltransport", "libhwbinder", "libutils", "libkeymasterdeviceutils", "liblog", "libcutils", "libc++", "libc", "libm", "libdl", ],
+			shared_libs: ["android.hardware.gatekeeper@1.0", "libhidlbase", "libutils", "liblog", "libcutils", "libkeymasterdeviceutils", "libqcbor", "libc++", "libc", "libm", "libdl", ],
 		},
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so"],
-			shared_libs: ["android.hardware.gatekeeper@1.0", "libhidlbase", "libhidltransport", "libhwbinder", "libutils", "libkeymasterdeviceutils", "liblog", "libcutils", "libc++", "libc", "libm", "libdl", ],
+			shared_libs: ["android.hardware.gatekeeper@1.0", "libhidlbase", "libutils", "liblog", "libcutils", "libkeymasterdeviceutils", "libqcbor", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	relative_install_path: "hw",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "android.hardware.keymaster@3.0-impl-qti",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/hw/android.hardware.keymaster@3.0-impl-qti.so"],
+			shared_libs: ["liblog", "libcrypto", "libhidlbase", "libutils", "libcutils", "libqcbor", "libkeymasterdeviceutils", "android.hardware.keymaster@3.0", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/vendor/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so"],
+			shared_libs: ["liblog", "libcrypto", "libhidlbase", "libutils", "libcutils", "libqcbor", "libkeymasterdeviceutils", "android.hardware.keymaster@3.0", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "both",
@@ -587,6 +609,90 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+	name: "libgcs-calwrapper",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libgcs-calwrapper.so"],
+			shared_libs: ["libgcs-osal", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/vendor/lib64/libgcs-calwrapper.so"],
+			shared_libs: ["libgcs-osal", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libgcs-ipc",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libgcs-ipc.so"],
+			shared_libs: ["liblog", "libexpat", "libgcs-osal", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/vendor/lib64/libgcs-ipc.so"],
+			shared_libs: ["liblog", "libexpat", "libgcs-osal", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libgcs-osal",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libgcs-osal.so"],
+			shared_libs: ["liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/vendor/lib64/libgcs-osal.so"],
+			shared_libs: ["liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libgcs",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libgcs.so"],
+			shared_libs: ["libgcs-osal", "libgcs-calwrapper", "libgcs-ipc", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/vendor/lib64/libgcs.so"],
+			shared_libs: ["libgcs-osal", "libgcs-calwrapper", "libgcs-ipc", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
 	name: "libgpudataproducer",
 	owner: "xiaomi",
 	strip: {
@@ -679,11 +785,11 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm: {
 			srcs: ["proprietary/vendor/lib/libkeymasterdeviceutils.so"],
-			shared_libs: ["libcutils", "libQSEEComAPI", "liblog", "libcrypto", "libion", "libc++", "libc", "libm", "libdl", ],
+			shared_libs: ["libion", "libcutils", "libQSEEComAPI", "liblog", "libcrypto", "libc++", "libc", "libm", "libdl", ],
 		},
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libkeymasterdeviceutils.so"],
-			shared_libs: ["libcutils", "libQSEEComAPI", "liblog", "libcrypto", "libion", "libc++", "libc", "libm", "libdl", ],
+			shared_libs: ["libion", "libcutils", "libQSEEComAPI", "liblog", "libcrypto", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "both",
@@ -700,11 +806,11 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm: {
 			srcs: ["proprietary/vendor/lib/libkeymasterprovision.so"],
-			shared_libs: ["liblog", "libcrypto", "libkeymasterdeviceutils", "libkeymasterutils", "libc++", "libc", "libm", "libdl", ],
+			shared_libs: ["liblog", "libcrypto", "libkeymasterdeviceutils", "libkeymasterutils", "libqcbor", "libc++", "libc", "libm", "libdl", ],
 		},
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libkeymasterprovision.so"],
-			shared_libs: ["liblog", "libcrypto", "libkeymasterdeviceutils", "libkeymasterutils", "libc++", "libc", "libm", "libdl", ],
+			shared_libs: ["liblog", "libcrypto", "libkeymasterdeviceutils", "libkeymasterutils", "libqcbor", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "both",
@@ -874,6 +980,27 @@ cc_prebuilt_library_shared {
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libmmosal.so"],
 			shared_libs: ["libutils", "libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libmulawdec",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libmulawdec.so"],
+			shared_libs: ["libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/vendor/lib64/libmulawdec.so"],
+			shared_libs: ["libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "both",
@@ -1226,11 +1353,11 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm: {
 			srcs: ["proprietary/vendor/lib/libqtikeymaster4.so"],
-			shared_libs: ["liblog", "libcrypto", "libhidlbase", "libhidltransport", "libhwbinder", "libutils", "libcutils", "libkeymasterdeviceutils", "libkeymasterutils", "libbase", "android.hardware.keymaster@4.0", "libc++", "libc", "libm", "libdl", ],
+			shared_libs: ["liblog", "libcrypto", "libhidlbase", "libutils", "libcutils", "libkeymasterdeviceutils", "libkeymasterutils", "libbase", "libqcbor", "android.hardware.keymaster@4.0", "android.hardware.keymaster@4.1", "libc++", "libc", "libm", "libdl", ],
 		},
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libqtikeymaster4.so"],
-			shared_libs: ["liblog", "libcrypto", "libhidlbase", "libhidltransport", "libhwbinder", "libutils", "libcutils", "libkeymasterdeviceutils", "libkeymasterutils", "libbase", "android.hardware.keymaster@4.0", "libc++", "libc", "libm", "libdl", ],
+			shared_libs: ["liblog", "libcrypto", "libhidlbase", "libutils", "libcutils", "libkeymasterdeviceutils", "libkeymasterutils", "libbase", "libqcbor", "android.hardware.keymaster@4.0", "android.hardware.keymaster@4.1", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "both",
@@ -1907,24 +2034,6 @@ cc_prebuilt_library_shared {
 		},
 	},
 	compile_multilib: "both",
-	prefer: true,
-	soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-	name: "sound_trigger.primary.sdm660",
-	owner: "xiaomi",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm: {
-			srcs: ["proprietary/vendor/lib/hw/sound_trigger.primary.sdm660.so"],
-			shared_libs: ["liblog", "libcutils", "libtinyalsa", "libaudioroute", "libexpat", "libhardware_legacy", "libc++", "libc", "libm", "libdl", ],
-		},
-	},
-	compile_multilib: "32",
-	relative_install_path: "hw",
 	prefer: true,
 	soc_specific: true,
 }
@@ -14596,74 +14705,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-	name: "libgcs-calwrapper",
-	owner: "xiaomi",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm: {
-			srcs: ["proprietary/vendor/lib/libgcs-calwrapper.so"],
-			shared_libs: ["libgcs-osal", "liblog", "libc++", "libc", "libm", "libdl", ],
-		},
-	},
-	compile_multilib: "32",
-	prefer: true,
-	soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-	name: "libgcs-ipc",
-	owner: "xiaomi",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm: {
-			srcs: ["proprietary/vendor/lib/libgcs-ipc.so"],
-			shared_libs: ["liblog", "libexpat", "libgcs-osal", "libc++", "libc", "libm", "libdl", ],
-		},
-	},
-	compile_multilib: "32",
-	prefer: true,
-	soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-	name: "libgcs-osal",
-	owner: "xiaomi",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm: {
-			srcs: ["proprietary/vendor/lib/libgcs-osal.so"],
-			shared_libs: ["liblog", "libc++", "libc", "libm", "libdl", ],
-		},
-	},
-	compile_multilib: "32",
-	prefer: true,
-	soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-	name: "libgcs",
-	owner: "xiaomi",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm: {
-			srcs: ["proprietary/vendor/lib/libgcs.so"],
-			shared_libs: ["libgcs-osal", "libgcs-calwrapper", "libgcs-ipc", "liblog", "libc++", "libc", "libm", "libdl", ],
-		},
-	},
-	compile_multilib: "32",
-	prefer: true,
-	soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
 	name: "libjpegdhw",
 	owner: "xiaomi",
 	strip: {
@@ -14706,23 +14747,6 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm: {
 			srcs: ["proprietary/vendor/lib/libjpegehw.so"],
-			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
-		},
-	},
-	compile_multilib: "32",
-	prefer: true,
-	soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-	name: "liblistensoundmodel2",
-	owner: "xiaomi",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm: {
-			srcs: ["proprietary/vendor/lib/liblistensoundmodel2.so"],
 			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
@@ -20568,6 +20592,48 @@ prebuilt_rfsa {
 }
 
 cc_prebuilt_library_shared {
+	name: "liblistenjni.qti",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/liblistenjni.qti.so"],
+			shared_libs: ["libutils", "liblog", "liblistensoundmodel2.qti", "liblsmclient", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/liblistenjni.qti.so"],
+			shared_libs: ["libutils", "liblog", "liblistensoundmodel2.qti", "liblsmclient", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "liblistensoundmodel2.qti",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/system_ext/lib/liblistensoundmodel2.qti.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/liblistensoundmodel2.qti.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
 	name: "libmmosal",
 	owner: "xiaomi",
 	strip: {
@@ -22946,7 +23012,25 @@ cc_prebuilt_binary {
 	target: {
 		android_arm64: {
 			srcs: ["proprietary/vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti"],
-			shared_libs: ["android.hardware.gatekeeper@1.0", "libhardware", "libhidlbase", "libhidltransport", "libhwbinder", "libutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+			shared_libs: ["android.hardware.gatekeeper@1.0", "libhardware", "libhidlbase", "libutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "64",
+	strip: {
+		none: true,
+	},
+	prefer: true,
+	relative_install_path: "hw",
+	soc_specific: true,
+}
+
+cc_prebuilt_binary {
+	name: "android.hardware.keymaster@3.0-service-qti",
+	owner: "xiaomi",
+	target: {
+		android_arm64: {
+			srcs: ["proprietary/vendor/bin/hw/android.hardware.keymaster@3.0-service-qti"],
+			shared_libs: ["liblog", "libcutils", "libbase", "libutils", "libhardware_legacy", "libhardware", "libhidlbase", "android.hardware.keymaster@3.0", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "64",
@@ -22964,7 +23048,7 @@ cc_prebuilt_binary {
 	target: {
 		android_arm64: {
 			srcs: ["proprietary/vendor/bin/hw/android.hardware.keymaster@4.0-service-qti"],
-			shared_libs: ["liblog", "libcutils", "libbase", "libutils", "libhardware", "libhwbinder", "libhidlbase", "libhidltransport", "android.hardware.keymaster@4.0", "libqtikeymaster4", "libcrypto", "libc++", "libc", "libm", "libdl", ],
+			shared_libs: ["liblog", "libcutils", "libbase", "libutils", "libhardware", "libhidlbase", "android.hardware.keymaster@4.0", "libqtikeymaster4", "libcrypto", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "64",
