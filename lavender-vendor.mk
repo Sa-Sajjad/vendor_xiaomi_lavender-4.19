@@ -112,11 +112,13 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/lavender/proprietary/vendor/etc/init/port-bridge.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/port-bridge.rc \
     vendor/xiaomi/lavender/proprietary/vendor/etc/init/qcrild.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/qcrild.rc \
     vendor/xiaomi/lavender/proprietary/vendor/etc/init/vendor.display.color@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.display.color@1.0-service.rc \
+    vendor/xiaomi/lavender/proprietary/vendor/etc/init/vendor.dolby.hardware.dms@2.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.dolby.hardware.dms@2.0-service.rc \
     vendor/xiaomi/lavender/proprietary/vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.hardware.alarm@1.0-service.rc \
     vendor/xiaomi/lavender/proprietary/vendor/etc/init/vendor.qti.hardware.dsp@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.hardware.dsp@1.0-service.rc \
     vendor/xiaomi/lavender/proprietary/vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc \
     vendor/xiaomi/lavender/proprietary/vendor/etc/init/vendor.qti.rmt_storage.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.rmt_storage.rc \
     vendor/xiaomi/lavender/proprietary/vendor/etc/init/vendor.qti.tftp.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.tftp.rc \
+    vendor/xiaomi/lavender/proprietary/vendor/etc/media_codecs_dolby_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_dolby_audio.xml \
     vendor/xiaomi/lavender/proprietary/vendor/etc/qdcm_calib_data_boe_td4320_fhdplus_video_mode_dsi_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_boe_td4320_fhdplus_video_mode_dsi_panel.xml \
     vendor/xiaomi/lavender/proprietary/vendor/etc/qdcm_calib_data_shenchao_nt36672a_fhdplus_video_mode_dsi_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_shenchao_nt36672a_fhdplus_video_mode_dsi_panel.xml \
     vendor/xiaomi/lavender/proprietary/vendor/etc/qdcm_calib_data_tianma_nt36672a_fhdplus_video_mode_dsi_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_tianma_nt36672a_fhdplus_video_mode_dsi_panel.xml \
@@ -214,6 +216,7 @@ PRODUCT_PACKAGES += \
     libcdsp_default_listener \
     libcdsprpc \
     libcpion \
+    libdapparamstorage \
     libdiag \
     libdsutils \
     libfastcvadsp_stub \
@@ -266,6 +269,7 @@ PRODUCT_PACKAGES += \
     vendor.display.color@1.1 \
     vendor.display.color@1.2 \
     vendor.display.postproc@1.0 \
+    vendor.dolby.hardware.dms@2.0 \
     vendor.qti.hardware.dsp@1.0 \
     vendor.qti.hardware.fingerprint@1.0 \
     vendor.qti.hardware.mwqemadapter@1.0 \
@@ -1012,6 +1016,7 @@ PRODUCT_PACKAGES += \
     libchromatix_lavender_s5kgm1_sunny_india_ii_zsl_preview_3a_its \
     libchromatix_lavender_s5kgm1_sunny_india_ii_zsl_preview_3a_sn \
     libchromatix_lavender_s5kgm1_sunny_india_ii_zsl_video_3a \
+    libdeccfg \
     libdepthmapwrapper \
     libdsd2pcm \
     libflash_pmic \
@@ -1150,6 +1155,8 @@ PRODUCT_PACKAGES += \
     libqtigef \
     libremosaic_daemon \
     libsmwrapper \
+    libstagefright_soft_ac4dec \
+    libstagefright_soft_ddpdec \
     libsymphony-cpu \
     libsymphonypower \
     libts_detected_face_hal \
@@ -1162,6 +1169,9 @@ PRODUCT_PACKAGES += \
     libqcbassboost \
     libqcreverb \
     libqcvirt \
+    libswdap \
+    libswgamedap \
+    libswvqe \
     com.qualcomm.qti.dpm.api@1.0_vendor \
     com.qualcomm.qti.imscmservice@1.0 \
     com.qualcomm.qti.imscmservice@2.0_vendor \
@@ -1211,6 +1221,7 @@ PRODUCT_PACKAGES += \
     libconfigdb \
     libdataitems \
     libdisp-aba \
+    libdlbdsservice \
     libdpmqmihal \
     libdrmfs \
     libdrmtime \
@@ -1282,6 +1293,7 @@ PRODUCT_PACKAGES += \
     qtibus \
     qtimutex \
     sensors.elliptic \
+    vendor.dolby.hardware.dms@2.0-impl \
     vendor.qti.data.factory@2.0 \
     vendor.qti.data.factory@2.1 \
     vendor.qti.data.factory@2.2 \
@@ -1523,6 +1535,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.ims.rcsuce-V1.2-java \
     vendor.qti.ims.rcsuceaidlservice-V1-java \
     manifest_android.hardware.drm@1.3-service.widevine.xml \
+    manifest_vendor.dolby.hardware.dms.xml \
     vendor.qti.gnss@4.3-service.xml \
     adpl \
     adsprpcd \
@@ -1539,6 +1552,7 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.0-service-qti \
     qcrild \
     vendor.display.color@1.0-service \
+    vendor.dolby.hardware.dms@2.0-service \
     vendor.qti.hardware.alarm@1.0-service \
     vendor.qti.hardware.tui_comm@1.0-service-qti \
     ims_rtp_daemon \
