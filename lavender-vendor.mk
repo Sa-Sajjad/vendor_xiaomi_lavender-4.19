@@ -193,7 +193,6 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/lavender/proprietary/vendor/radio/qcril_database/upgrade/9_version_update_ecc_table.sql:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/upgrade/9_version_update_ecc_table.sql
 
 PRODUCT_PACKAGES += \
-    libsdm-disp-apis \
     vendor.qti.diaghal-V1-ndk \
     eglSubDriverAndroid \
     libEGL_adreno \
@@ -256,7 +255,6 @@ PRODUCT_PACKAGES += \
     libsdedrm \
     libsdm-color \
     libsdm-diag \
-    libsdm-disp-vndapis \
     libsdmextension \
     libsdsprpc \
     libsensor1 \
@@ -1273,6 +1271,7 @@ PRODUCT_PACKAGES += \
     libril-qcril-hook-oem \
     librilqmiservices \
     librpmb \
+    libsdm-disp-vndapis \
     libsecureui_svcsock \
     libsettings \
     libslimclient \
@@ -1413,12 +1412,6 @@ PRODUCT_PACKAGES += \
     libimsmedia_jni \
     libqmi_cci_system \
     libqmi_encdec_system \
-    libsd_sdk_display.qti \
-    libsdm-disp-apis.qti \
-    vendor.display.color@1.0_system_ext \
-    vendor.display.color@1.1_system_ext \
-    vendor.display.color@1.2_system_ext \
-    vendor.display.postproc@1.0_system_ext \
     vendor.qti.ImsRtpService-V1-ndk \
     vendor.qti.diaghal@1.0 \
     vendor.qti.hardware.embmssl@1.0 \
@@ -1588,9 +1581,5 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libimscamera_jni_libimscamera_jni_symlink64 \
     libimsmedia_jni_libimsmedia_jni_symlink64 \
-    libEGL_adreno_libEGL_adreno_symlink32 \
     libGLESv2_adreno_libGLESv2_adreno_symlink32 \
-    libq3dtools_adreno_libq3dtools_adreno_symlink32 \
-    libEGL_adreno_libEGL_adreno_symlink64 \
-    libGLESv2_adreno_libGLESv2_adreno_symlink64 \
-    libq3dtools_adreno_libq3dtools_adreno_symlink64
+    libGLESv2_adreno_libGLESv2_adreno_symlink64
