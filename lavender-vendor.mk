@@ -307,7 +307,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.bluetooth_sar@1.1 \
     vendor.qti.hardware.dsp@1.0 \
     vendor.qti.hardware.fingerprint@1.0 \
-    vendor.qti.hardware.mwqemadapter@1.0 \
+    vendor.qti.hardware.mwqemadapter@1.0_vendor \
     sound_trigger.primary.sdm660 \
     libDiracAPI_SHARED \
     libMegviiFacepp-0.5.2 \
