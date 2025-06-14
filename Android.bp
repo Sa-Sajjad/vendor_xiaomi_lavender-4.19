@@ -833,14 +833,13 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm: {
 			srcs: ["proprietary/vendor/lib/libbt-hidlclient.so"],
-			shared_libs: ["libutils", "libhidlbase", "android.hardware.bluetooth@1.0", "com.dsi.ant@1.0", "vendor.qti.hardware.fm@1.0_vendor", "liblog", "libc++", "libc", "libm", "libdl", ],
 		},
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libbt-hidlclient.so"],
-			shared_libs: ["libutils", "libhidlbase", "android.hardware.bluetooth@1.0", "com.dsi.ant@1.0", "vendor.qti.hardware.fm@1.0_vendor", "liblog", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "both",
+	check_elf_files: false,
 	prefer: true,
 	soc_specific: true,
 }
