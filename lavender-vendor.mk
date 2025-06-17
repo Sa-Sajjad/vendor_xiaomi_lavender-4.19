@@ -97,8 +97,9 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/lavender/proprietary/vendor/etc/default-permissions/com.qualcomm.qti.cne.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default-permissions/com.qualcomm.qti.cne.xml \
     vendor/xiaomi/lavender/proprietary/vendor/etc/diracmobile.config:$(TARGET_COPY_OUT_VENDOR)/etc/diracmobile.config \
     vendor/xiaomi/lavender/proprietary/vendor/etc/diracvdd.bin:$(TARGET_COPY_OUT_VENDOR)/etc/diracvdd.bin \
+    vendor/xiaomi/lavender/proprietary/vendor/etc/gpfspath_oem_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gpfspath_oem_config.xml \
     vendor/xiaomi/lavender/proprietary/vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.bluetooth@1.0-service-qti.rc \
-    vendor/xiaomi/lavender/proprietary/vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.drm@1.3-service.widevine.rc \
+    vendor/xiaomi/lavender/proprietary/vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.drm@1.4-service.widevine.rc \
     vendor/xiaomi/lavender/proprietary/vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc \
     vendor/xiaomi/lavender/proprietary/vendor/etc/init/android.hardware.keymaster@4.0-service-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.keymaster@4.0-service-qti.rc \
     vendor/xiaomi/lavender/proprietary/vendor/etc/init/cnd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/cnd.rc \
@@ -121,6 +122,8 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/lavender/proprietary/vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.hardware.alarm@1.0-service.rc \
     vendor/xiaomi/lavender/proprietary/vendor/etc/init/vendor.qti.hardware.capabilityconfigstore@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.hardware.capabilityconfigstore@1.0-service.rc \
     vendor/xiaomi/lavender/proprietary/vendor/etc/init/vendor.qti.hardware.dsp@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.hardware.dsp@1.0-service.rc \
+    vendor/xiaomi/lavender/proprietary/vendor/etc/init/vendor.qti.hardware.qseecom@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.hardware.qseecom@1.0-service.rc \
+    vendor/xiaomi/lavender/proprietary/vendor/etc/init/vendor.qti.hardware.qteeconnector@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.hardware.qteeconnector@1.0-service.rc \
     vendor/xiaomi/lavender/proprietary/vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc \
     vendor/xiaomi/lavender/proprietary/vendor/etc/init/vendor.qti.rmt_storage.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.rmt_storage.rc \
     vendor/xiaomi/lavender/proprietary/vendor/etc/init/vendor.qti.tftp.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.tftp.rc \
@@ -199,6 +202,7 @@ PRODUCT_PACKAGES += \
     libsdm-disp-apis \
     vendor.qti.diaghal-V1-ndk \
     btaudio_offload_if \
+    com.qualcomm.qti.dpm.api@1.0_vendor \
     eglSubDriverAndroid \
     libEGL_adreno \
     libGLESv1_CM_adreno \
@@ -214,12 +218,16 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.bluetooth_sar@1.1-impl \
     vendor.qti.hardware.btconfigstore@1.0-impl \
     vendor.qti.hardware.btconfigstore@2.0-impl \
+    vendor.qti.hardware.qseecom@1.0-impl \
+    vendor.qti.hardware.qteeconnector@1.0-impl \
     vulkan.adreno \
     libC2D2 \
     libCB \
     libFlacSwDec \
+    libGPreqcancel_svc \
     libOpenCL \
     libQSEEComAPI \
+    libQTEEConnector_vendor \
     libVkLayer_q3dtools \
     libacdb-fts \
     libacdbloader \
@@ -246,6 +254,10 @@ PRODUCT_PACKAGES += \
     libfastcvadsp_stub \
     libfastcvopt \
     libfastrpc_utf_stub \
+    libgcs-calwrapper \
+    libgcs-ipc \
+    libgcs-osal \
+    libgcs \
     libgpudataproducer \
     libgsl \
     libhdr_tm \
@@ -259,8 +271,9 @@ PRODUCT_PACKAGES += \
     libmdsprpc \
     libminkdescriptor \
     libminksocket \
+    libmm-hdcpmgr \
     libmmcamera_dbg \
-    libmmosal_vendor \
+    libmulawdec \
     libnative-api \
     libqcbor \
     libqcci_legacy \
@@ -307,11 +320,15 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.bluetooth_sar@1.1 \
     vendor.qti.hardware.dsp@1.0 \
     vendor.qti.hardware.fingerprint@1.0 \
+    vendor.qti.hardware.fm@1.0 \
     vendor.qti.hardware.mwqemadapter@1.0_vendor \
-    sound_trigger.primary.sdm660 \
+    vendor.qti.hardware.qseecom@1.0_vendor \
+    vendor.qti.hardware.qteeconnector@1.0 \
+    vendor.qti.hardware.tui_comm@1.0_vendor \
+    vendor.qti.hardware.vpp@1.1 \
+    vendor.qti.hardware.vpp@1.2 \
     libDiracAPI_SHARED \
     libMegviiFacepp-0.5.2 \
-    libOmxVideoDSMode \
     libSNPE \
     libSonyIMX376C3RmscLibrary \
     libSonyIMX376KRmscLibrary \
@@ -1049,16 +1066,10 @@ PRODUCT_PACKAGES += \
     libdeccfg \
     libdepthmapwrapper \
     libdrc \
-    libdsd2pcm \
     libflash_pmic \
-    libgcs-calwrapper \
-    libgcs-ipc \
-    libgcs-osal \
-    libgcs \
     libjpegdhw \
     libjpegdmahw \
     libjpegehw \
-    liblistensoundmodel2 \
     libmegface \
     libmibokeh_660 \
     libmmcamera2_c2d_module \
@@ -1200,7 +1211,6 @@ PRODUCT_PACKAGES += \
     libswdap \
     libswgamedap \
     libswvqe \
-    com.qualcomm.qti.dpm.api@1.0_vendor \
     com.qualcomm.qti.imscmservice@1.0 \
     com.qualcomm.qti.imscmservice@2.0_vendor \
     com.qualcomm.qti.imscmservice@2.1_vendor \
@@ -1231,11 +1241,13 @@ PRODUCT_PACKAGES += \
     lib-rtpsl \
     lib-siputility \
     lib-uceservice \
+    libGPQTEEC_vendor \
+    libGPTEE_vendor \
     libGPreqcancel \
-    libGPreqcancel_svc \
     libSecureUILib \
     libStDrvInt \
     libaoa \
+    libbase64 \
     libcdfw \
     libcdfw_remote_api \
     libcne \
@@ -1278,7 +1290,7 @@ PRODUCT_PACKAGES += \
     libnetmgr_rmnet_ext \
     libnlnetmgr \
     liboemaids_vendor \
-    liboemcrypto \
+    libops \
     libpdmapper \
     libpdnotifier \
     libperipheral_client \
@@ -1297,22 +1309,29 @@ PRODUCT_PACKAGES += \
     libril-qc-radioconfig \
     libril-qcril-hook-oem \
     librilqmiservices \
+    librmp \
     librpmb \
+    libsecureui \
     libsecureui_svcsock \
     libsettings \
+    libsi \
     libslimclient \
+    libspl \
     libssd \
     libsubsystem_control \
     libsystem_health_mon \
     libthermalfeature \
     libthermalioctl \
     libtime_genoff \
+    libtrustedapploader \
+    libtzdrmgenprov \
     libvendor.goodix.hardware.interfaces.biometrics.fingerprint@2.1 \
     libwms \
     libwqe \
     libwvhidl \
     libxml \
     libxtadapter \
+    libwvdrmengine \
     qcrilHalMarshal \
     qcrild_librilutils \
     qtibus \
@@ -1349,7 +1368,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.data.latency@1.0_vendor \
     vendor.qti.hardware.data.lce@1.0_vendor \
     vendor.qti.hardware.data.qmi@1.0_vendor \
-    vendor.qti.hardware.fm@1.0_vendor \
     vendor.qti.hardware.qccsyshal@1.0 \
     vendor.qti.hardware.radio.am@1.0_vendor \
     vendor.qti.hardware.radio.ims@1.0_vendor \
@@ -1383,7 +1401,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.radio.uim_remote_client@1.2_vendor \
     vendor.qti.hardware.radio.uim_remote_server@1.0_vendor \
     vendor.qti.hardware.slmadapter@1.0_vendor \
-    vendor.qti.hardware.tui_comm@1.0 \
     vendor.qti.ims.callcapability@1.0_vendor \
     vendor.qti.ims.callinfo@1.0_vendor \
     vendor.qti.ims.factory@1.0_vendor \
@@ -1412,15 +1429,20 @@ PRODUCT_PACKAGES += \
     libscveT2T_skel \
     libvpp_svc_skel \
     com.qualcomm.qti.ant@1.0 \
+    libmmparserextractor \
     libbinauralrenderer_wrapper.qti \
     libhoaeffects.qti \
     libhoaeffects_csim \
+    liblistenjni.qti \
+    liblistensoundmodel2.qti \
     liblsmclient \
     libmmosal \
+    libmmparser_lite \
     libvr_amb_engine \
     libvr_object_engine \
     vendor.qti.hardware.ListenSoundModel@1.0 \
-    libmmparser_lite \
+    vendor.qti.hardware.qseecom@1.0 \
+    vendor.qti.hardware.tui_comm@1.0 \
     com.qualcomm.qti.dpm.api@1.0 \
     com.qualcomm.qti.imscmservice@2.0 \
     com.qualcomm.qti.imscmservice@2.1 \
@@ -1438,7 +1460,6 @@ PRODUCT_PACKAGES += \
     com.quicinc.cne.server@2.0 \
     com.quicinc.cne.server@2.1 \
     com.quicinc.cne.server@2.2 \
-    fm_helium \
     lib-imsvideocodec \
     lib-imsvt \
     lib-imsvtextutils \
@@ -1452,7 +1473,6 @@ PRODUCT_PACKAGES += \
     libembmsmmosal \
     libembmsmmparser_lite \
     libembmstinyxml \
-    libfm-hci \
     libimscamera_jni \
     libimsmedia_jni \
     libmwqemiptablemgr \
@@ -1511,10 +1531,12 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.data.lceaidlservice-V1-ndk \
     vendor.qti.hardware.data.qmi@1.0 \
     vendor.qti.hardware.data.qmiaidlservice-V1-ndk \
+    vendor.qti.hardware.dpmaidlservice-V1-ndk \
+    vendor.qti.hardware.dpmservice@1.0 \
+    vendor.qti.hardware.dpmservice@1.1 \
     vendor.qti.hardware.embmssl@1.0 \
     vendor.qti.hardware.embmssl@1.1 \
     vendor.qti.hardware.embmsslaidl-V2-ndk \
-    vendor.qti.hardware.fm@1.0 \
     vendor.qti.hardware.mwqemadapter@1.0 \
     vendor.qti.hardware.mwqemadapteraidlservice-V1-ndk \
     vendor.qti.hardware.qxr-V1-ndk \
@@ -1595,6 +1617,7 @@ PRODUCT_PACKAGES += \
     uceShimService \
     dpmserviceapp \
     ims \
+    tcmclient \
     audiosphere \
     com.qti.dpmframework \
     com.qualcomm.qti.imscmservice-V2.0-java \
@@ -1658,6 +1681,9 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.data.lceaidlservice-V1-java \
     vendor.qti.hardware.data.qmi-V1.0-java \
     vendor.qti.hardware.data.qmiaidlservice-V1-java \
+    vendor.qti.hardware.dpmaidlservice-V1-java \
+    vendor.qti.hardware.dpmservice-V1.0-java \
+    vendor.qti.hardware.dpmservice-V1.1-java \
     vendor.qti.hardware.mwqemadapter-V1.0-java \
     vendor.qti.hardware.mwqemadapteraidlservice-V1-java \
     vendor.qti.hardware.slmadapter-V1.0-java \
@@ -1692,7 +1718,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.latency-V2.1-java \
     vendor.qti.latency-V2.2-java \
     vendor.qti.latencyaidlservice-V1-java \
-    manifest_android.hardware.drm@1.3-service.widevine.xml \
+    manifest_android.hardware.drm@1.4-service.widevine.xml \
     manifest_vendor.dolby.hardware.dms.xml \
     vendor.qti.gnss@4.3-service.xml \
     adpl \
@@ -1706,7 +1732,7 @@ PRODUCT_PACKAGES += \
     garden_app \
     hvdcp_opti \
     android.hardware.bluetooth@1.0-service-qti \
-    android.hardware.drm@1.3-service.widevine \
+    android.hardware.drm@1.4-service.widevine \
     android.hardware.gatekeeper@1.0-service-qti \
     android.hardware.keymaster@4.0-service-qti \
     qcrild \
@@ -1714,6 +1740,8 @@ PRODUCT_PACKAGES += \
     vendor.dolby.hardware.dms@2.0-service \
     vendor.qti.hardware.alarm@1.0-service \
     vendor.qti.hardware.capabilityconfigstore@1.0-service \
+    vendor.qti.hardware.qseecom@1.0-service \
+    vendor.qti.hardware.qteeconnector@1.0-service \
     vendor.qti.hardware.tui_comm@1.0-service-qti \
     ims_rtp_daemon \
     imsdatadaemon \
