@@ -1466,6 +1466,7 @@ PRODUCT_PACKAGES += \
     lib-imsvtutils \
     libdiag_system.qti \
     libdiag_system \
+    libdiagatbparser_system \
     libdpmctmgr \
     libdpmfdmgr \
     libdpmframework \
