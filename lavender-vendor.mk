@@ -1246,8 +1246,8 @@ PRODUCT_PACKAGES += \
     libGPreqcancel \
     libSecureUILib \
     libStDrvInt \
-    libaoa \
     libbase64 \
+    libcacertclient \
     libcdfw \
     libcdfw_remote_api \
     libcne \
@@ -1272,12 +1272,12 @@ PRODUCT_PACKAGES += \
     libhdcpsrm \
     libizat_client_api \
     libizat_core \
+    libjnihelper \
     liblbs_core \
     libloadalgo_stub \
     libloc_api_v02 \
     libloc_api_wds \
-    libloc_qwes_iface \
-    libloc_ril_client \
+    libloc_core \
     libloc_socket \
     liblocationservice \
     liblocationservice_glue \
@@ -1299,6 +1299,7 @@ PRODUCT_PACKAGES += \
     libqcmaputils \
     libqcrilFramework \
     libqcrildatactl \
+    libqdma_file_agent \
     libqfp-service \
     libqisl \
     libqsocket \
@@ -1315,7 +1316,6 @@ PRODUCT_PACKAGES += \
     libsecureui_svcsock \
     libsettings \
     libsi \
-    libslimclient \
     libspl \
     libssd \
     libsubsystem_control \
@@ -1356,6 +1356,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.gnss@4.3-service \
     vendor.qti.gnss@4.3 \
     vendor.qti.hardware.alarm@1.0_vendor \
+    vendor.qti.hardware.cacert@1.0 \
     vendor.qti.hardware.data.cne.internal.api@1.0_vendor \
     vendor.qti.hardware.data.cne.internal.constants@1.0_vendor \
     vendor.qti.hardware.data.cne.internal.server@1.0_vendor \
@@ -1752,6 +1753,7 @@ PRODUCT_PACKAGES += \
     loadalgo \
     loc_launcher \
     lowi-server \
+    mlid \
     mm-pp-dpps \
     msm_irqbalance \
     netmgrd \
@@ -1768,11 +1770,11 @@ PRODUCT_PACKAGES += \
     qti \
     rmt_storage \
     sensors.qti \
-    slim_daemon \
     tftp_server \
     thermal-engine \
     time_daemon \
     xtra-daemon \
+    xtwifi-client \
     dpmd \
     qxrsplitauxservice
 
