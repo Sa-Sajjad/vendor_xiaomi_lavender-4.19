@@ -1278,7 +1278,6 @@ PRODUCT_PACKAGES += \
     libpdmapper \
     libpdnotifier \
     libperipheral_client \
-    libprotobuf-cpp-full-21.7 \
     libqcc_file_agent \
     libqcmaputils \
     libqcrilFramework \
