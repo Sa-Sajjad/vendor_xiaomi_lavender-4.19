@@ -1317,9 +1317,11 @@ PRODUCT_PACKAGES += \
     libsecureui_svcsock \
     libsettings \
     libsi \
+    libspatializerparamstorage \
     libspl \
     libssd \
     libsubsystem_control \
+    libswspatializer_ext \
     libsystem_health_mon \
     libthermalfeature \
     libthermalioctl \
